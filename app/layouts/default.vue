@@ -16,7 +16,8 @@ html {
 body {
   overflow-x: hidden;
   font-family: $font-family-default;
-  color: $black;
+  color: $white;
+  text-transform: uppercase;
 }
 </style>
 
@@ -27,10 +28,11 @@ body {
   min-height: 100vh;
 
   &__wrapper {
-    background-image: url('~/assets/imgs/main-background.webp');
-    background-repeat: no-repeat;
-    background-position: 0 -500px;
-    background-size: cover;
+    // background-image:
+    //   linear-gradient(rgb(0 0 0 / 50%), rgb(0 0 0 / 50%)), url('~/assets/imgs/main-background.webp');
+    // background-repeat: no-repeat;
+    // background-position: 0 -500px;
+    // background-size: cover;
   }
 }
 </style>

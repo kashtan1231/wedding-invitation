@@ -49,6 +49,7 @@
   }
 
   &__title {
+    font-weight: 500;
     color: $red;
     text-align: center;
     text-transform: uppercase;
@@ -66,6 +67,7 @@
     margin-top: 150px;
     font-family: $font-family-additional;
     color: $red;
+    text-transform: none;
     rotate: -12deg;
 
     @include respond-to('mobile') {

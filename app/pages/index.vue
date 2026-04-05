@@ -1,11 +1,13 @@
 <template>
   <NuxtLayout class="home">
-    <Hero />
+    <WHero />
+    <WPlace />
   </NuxtLayout>
 </template>
 
 <script setup lang="ts">
-import Hero from '~/components/W-Hero.vue'
+import WHero from '~/components/W-Hero.vue'
+import WPlace from '~/components/W-Place.vue'
 </script>
 
 <style lang="scss" scoped>
