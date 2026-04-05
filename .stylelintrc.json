@@ -1,0 +1,15 @@
+{
+  "extends": [
+    "stylelint-config-standard-scss",
+    "stylelint-config-recommended-vue",
+    "stylelint-config-recess-order"
+  ],
+  "plugins": ["stylelint-order"],
+  "rules": {
+    "media-query-no-invalid": null,
+    "at-rule-no-unknown": null,
+    "selector-max-type": null,
+    "selector-class-pattern": null,
+    "declaration-property-value-no-unknown": null
+  }
+}
