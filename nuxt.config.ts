@@ -21,6 +21,18 @@ export default defineNuxtConfig({
   },
 
   vite: {
+    optimizeDeps: {
+      include: [
+        '@vue/devtools-core',
+        '@vue/devtools-kit',
+        'dayjs',
+        'dayjs/plugin/updateLocale',
+        'dayjs/plugin/duration',
+        'dayjs/plugin/relativeTime',
+        'dayjs/plugin/utc',
+        'vue-dompurify-html',
+      ],
+    },
     build: {
       target: 'ESNext',
     },
@@ -64,7 +76,8 @@ export default defineNuxtConfig({
 
   googleFonts: {
     families: {
-      Inter: '100..900',
+      Oswald: '200..700',
+      'Homemade Apple': 400,
     },
   },
 
