@@ -68,7 +68,6 @@ export default defineNuxtConfig({
     ],
     '@nuxt/image',
     'nuxt-svgo',
-    'nuxt-vitalizer',
   ],
 
   piniaPluginPersistedstate: {
@@ -95,11 +94,6 @@ export default defineNuxtConfig({
 
   svgo: {
     componentPrefix: 'I',
-  },
-
-  vitalizer: {
-    disablePrefetchLinks: true,
-    disablePreloadLinks: true,
   },
 
   runtimeConfig: {
