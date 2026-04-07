@@ -3,7 +3,7 @@
     <div class="hero__wrapper">
       <h3 class="hero__title">Wedding day</h3>
       <h1 class="hero__description">
-        <span>Konstantyn</span> <span>+</span> <span class="right">Elyzaveta</span>
+        <span>Konstantyn</span> <span>+</span> <span class="right">Yelyzaveta</span>
       </h1>
     </div>
   </div>

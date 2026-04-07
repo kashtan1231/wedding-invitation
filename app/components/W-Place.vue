@@ -27,7 +27,7 @@
         КИЇВСЬКА ОБЛ.
       </h4>
 
-      <a class="place__map" href="https://maps.app.goo.gl/JfHoksq5C63vuGtH9">
+      <a class="place__map" href="https://maps.app.goo.gl/JfHoksq5C63vuGtH9" target="_blank">
         <img src="~/assets/imgs/show-map.webp" alt="show map" />
       </a>
     </div>
