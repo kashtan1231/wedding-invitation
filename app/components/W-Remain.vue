@@ -1,5 +1,5 @@
 <template>
-  <div class="remain">
+  <div class="remain" :class="{ 'remain--colored': !showRemainBg }">
     <div class="remain__wrapper">
       <h1 class="remain__title">До нашого весілля:</h1>
       <div class="remain__timer">
@@ -7,11 +7,15 @@
         <span>{{ hours }} {{ pluralize(hours, 'година', 'години', 'годин') }}</span>
         <span>{{ minutes }} {{ pluralize(minutes, 'хвилина', 'хвилини', 'хвилин') }}</span>
       </div>
+
+      <h3 class="remain__text">просимо підтвердити вашу присутність</h3>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
+const showRemainBg = inject<Ref<boolean>>('showRemainBg', ref(false))
+
 const pluralize = (n: number, one: string, few: string, many: string) => {
   const mod10 = n % 10
   const mod100 = n % 100
@@ -54,23 +58,27 @@ onUnmounted(() => clearInterval(interval))
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-image:
-    linear-gradient(rgb(0 0 0 / 70%), rgb(0 0 0 / 70%)), url('~/assets/imgs/main-background.webp');
-  background-repeat: no-repeat;
-  background-position:
-    0 0,
-    0 -300px;
-  background-size: cover;
 
-  @include respond-to('tablet') {
-    background-position: top;
+  &--colored {
+    .remain__title,
+    .remain__text {
+      background: none;
+      -webkit-text-fill-color: #{$red};
+    }
+
+    .remain__timer span {
+      background: none;
+      -webkit-text-fill-color: #{$red};
+    }
   }
 
   &__wrapper {
     display: flex;
     flex-direction: column;
+    justify-content: center;
     width: 100%;
     max-width: 1240px;
+    height: 600px;
     padding: 100px 16px;
   }
 
@@ -101,6 +109,15 @@ onUnmounted(() => clearInterval(interval))
       background-clip: text;
       -webkit-text-fill-color: transparent;
     }
+  }
+
+  &__text {
+    margin-top: auto;
+    font-weight: 500;
+    text-align: center;
+    background: linear-gradient(105deg, #fff 0%, #a8a8a8 40%, #d4d4d4 60%, #fff 100%);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
   }
 }
 </style>

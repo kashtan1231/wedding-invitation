@@ -1,5 +1,5 @@
 <template>
-  <div class="info">
+  <div class="info" :class="{ 'info--light': !showInfoBg }">
     <div class="info__wrapper">
       <h1 class="info__title">Timing</h1>
 
@@ -52,6 +52,8 @@
 </template>
 
 <script setup lang="ts">
+const showInfoBg = inject<Ref<boolean>>('showInfoBg', ref(false))
+
 const detailsList = [
   'Що дарувати? <br/> Будемо щиро раді вашому внеску в бюджет нашої родини — це допоможе нам здійснити нашу мрію.',
   'Просимо вас не дарувати нам квіти, адже ми не встигнемо насолодитися їхньою красою. Приємним компліментом для нас буде пляшка вина для нашої сімейної винотеки.',
@@ -64,10 +66,13 @@ const detailsList = [
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-image: url('~/assets/imgs/info.png');
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
+  overflow-x: hidden;
+  color: $red;
+  transition: color 0.8s ease;
+
+  &--light {
+    color: $white;
+  }
 
   &__wrapper {
     display: flex;
@@ -79,7 +84,7 @@ const detailsList = [
 
   &__title {
     font-weight: 500;
-    color: $red;
+    color: inherit;
     text-align: center;
 
     &--dress-code {
@@ -113,7 +118,7 @@ const detailsList = [
     gap: 64px;
     align-items: center;
     margin: 80px 0 160px;
-    color: $red;
+    color: inherit;
     text-align: center;
 
     @include respond-to('mobile') {
@@ -143,8 +148,6 @@ const detailsList = [
 
     @include respond-to('mobile') {
       gap: 24px;
-
-      //   margin-top: 40px;
     }
 
     .item {
@@ -152,7 +155,7 @@ const detailsList = [
       flex-direction: column;
       gap: 24px;
       width: 100%;
-      color: $red;
+      color: inherit;
 
       &:nth-child(odd) .item__number {
         margin-left: auto;

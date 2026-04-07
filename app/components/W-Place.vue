@@ -7,7 +7,7 @@
           Ви — частина нашої історії: наших щирих розмов до світанку, сміху, тепла й підтримки.
         </span>
         <span>
-          Сьогодні ми створюємо нову історію — нашу сім’ю. <br />
+          Сьогодні ми створюємо нову історію — нашу сім'ю. <br />
           І нам по-справжньому важливо, щоб ви були поруч у цей день.
         </span>
         <span>
@@ -19,7 +19,7 @@
         02.07.2026 <img src="~/assets/imgs/heart.png" class="place__date-heart" alt="heart" />
       </h1>
 
-      <h4 class="place__location">
+      <h4 class="place__location" :class="{ 'place__location--colored': showInfoBg }">
         РЕСТОРАН HARVEST, <br />
         ОБУХІВСЬКЕ ШОСЕ, 50, КОЗИН, <br />
         КИЇВСЬКА ОБЛ.
@@ -32,26 +32,20 @@
   </div>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+const showInfoBg = inject<Ref<boolean>>('showInfoBg', ref(false))
+</script>
 
 <style lang="scss" scoped>
 .place {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-image:
-    linear-gradient(rgb(0 0 0 / 60%), rgb(0 0 0 / 60%)), url('~/assets/imgs/main-background.jpg');
-  background-repeat: no-repeat;
-  background-position:
-    0 0,
-    0 -300px;
-  background-size: cover;
+  max-width: 100vw;
 
-  @include respond-to('tablet') {
-    background-position:
-      0 0,
-      -160px 0;
-  }
+  // overflow-x: hidden;
+
+  // overflow: hidden auto;
 
   &__wrapper {
     display: flex;
@@ -75,7 +69,7 @@
 
   &__date {
     position: relative;
-    margin-top: 204px;
+    margin-top: 224px;
     font-family: $font-family-additional;
     text-align: center;
 
@@ -83,6 +77,7 @@
       position: absolute;
       top: 50%;
       left: 50%;
+      z-index: -1;
       width: 500px;
       filter: brightness(0) saturate(100%) invert(7%) sepia(89%) saturate(3500%) hue-rotate(335deg)
         brightness(75%);
@@ -97,6 +92,11 @@
     background: linear-gradient(105deg, #fff 0%, #d8d8d8 50%, #fff 100%);
     background-clip: text;
     -webkit-text-fill-color: transparent;
+
+    &--colored {
+      background: none;
+      -webkit-text-fill-color: #{$red};
+    }
   }
 
   &__map {
