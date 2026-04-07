@@ -6,12 +6,19 @@ export default defineNuxtConfig({
     head: {
       charset: 'utf-8',
       viewport: 'width=device-width, initial-scale=1',
-      title: 'Template nuxt 3',
+      title: 'Весільне запрошення',
       meta: [
         {
           name: 'description',
-          content: 'Nuxt 3 template app for development',
+          content: 'Запрошуємо Вас на наш особливий день! Докладніше за посиланням.',
         },
+        { property: 'og:title', content: 'Весільне запрошення' },
+        {
+          property: 'og:description',
+          content: 'Запрошуємо Вас на наш особливий день! Докладніше за посиланням.',
+        },
+        { property: 'og:image', content: '/og.jpg' },
+        { property: 'og:type', content: 'website' },
       ],
     },
   },
