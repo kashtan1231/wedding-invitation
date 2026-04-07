@@ -32,8 +32,14 @@
         dress code dress code dress code dress code dress code dress code
       </h1>
 
-      <h3 class="info__description"
-        >НАМ БУДЕ ДУЖЕ ПРИЄМНО, ЯКЩО ПРИ ВИБОРІ СВОГО ВБРАННЯ ВИ ДОТРИМАЄТЕСЯ НАШОЇ ПАЛІТРИ:
+      <h2 class="info__title info__title--dress-code mobile">
+        dress code dress code dress code dress code dress code dress code dress code dress code
+        dress code dress code dress code dress code dress code dress code
+      </h2>
+
+      <h3 class="info__description">
+        Ми дуже хочемо, щоб атмосфера свята була цілісною, тому просимо вас дотриматися нашого
+        дрес-коду в такій палітрі:
       </h3>
 
       <div class="info__dress-code">
@@ -47,8 +53,8 @@
 
 <script setup lang="ts">
 const detailsList = [
-  'Що дарувати? <br/> Як подарунок будемо раді вкладу до бюджету нашої родини. <br/> Він точно допоможе втілити нашу мрію у реальність!',
-  'Просимо вас не дарувати нам квіти, адже ми не встигнемо насолодитися їхньою красою. Приємним компліментом для нас замість квітів буде пляшка вина для нашої сімейної винотеки.',
+  'Що дарувати? <br/> Будемо щиро раді вашому внеску в бюджет нашої родини — це допоможе нам здійснити нашу мрію.',
+  'Просимо вас не дарувати нам квіти, адже ми не встигнемо насолодитися їхньою красою. Приємним компліментом для нас буде пляшка вина для нашої сімейної винотеки.',
   'Ми будемо вдячні, якщо ви утримаєтесь від вигуків «Гірко!». Адже поцілунок - це прояв почуттів, а не традиція, яка має бути «за розкладом».',
 ]
 </script>
@@ -60,6 +66,7 @@ const detailsList = [
   align-items: center;
   background-image: url('~/assets/imgs/info.png');
   background-repeat: no-repeat;
+  background-position: center;
   background-size: cover;
 
   &__wrapper {
@@ -76,14 +83,26 @@ const detailsList = [
     text-align: center;
 
     &--dress-code {
+      display: block;
       margin: 160px 0 80px;
       font-family: $font-family-additional;
-      line-height: 1;
+      line-height: 1.5;
       text-transform: lowercase;
       rotate: -12deg;
 
       @include respond-to('mobile') {
-        margin: 80px -100px 40px;
+        display: none;
+      }
+
+      &.mobile {
+        display: none;
+        width: 800px;
+        margin: 160px -100px 80px;
+        line-height: 2;
+
+        @include respond-to('mobile') {
+          display: block;
+        }
       }
     }
   }
@@ -99,7 +118,7 @@ const detailsList = [
 
     @include respond-to('mobile') {
       gap: 32px;
-      margin: 40px 0 80px;
+      margin: 40px 0 160px;
     }
   }
 
@@ -124,7 +143,8 @@ const detailsList = [
 
     @include respond-to('mobile') {
       gap: 24px;
-      margin-top: 40px;
+
+      //   margin-top: 40px;
     }
 
     .item {

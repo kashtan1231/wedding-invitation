@@ -4,16 +4,14 @@
       <h3 class="place__text">
         <span>Дорогі!</span>
         <span>
-          Ви — не просто друзі.<br />Ви — частина нашої історії: наших щирих розмов до світанку,
-          сміху, тепла й підтримки в найважливіші моменти.
+          Ви — частина нашої історії: наших щирих розмов до світанку, сміху, тепла й підтримки.
         </span>
         <span>
           Сьогодні ми створюємо нову історію — нашу сім’ю. <br />
           І нам по-справжньому важливо, щоб ви були поруч у цей день.
         </span>
         <span>
-          З радістю запрошуємо вас розділити з нами момент, який стане одним із найцінніших у нашому
-          житті.
+          З радістю запрошуємо вас розділити момент, який стане одним із найцінніших у нашому житті.
         </span>
       </h3>
 
@@ -42,7 +40,7 @@
   flex-direction: column;
   align-items: center;
   background-image:
-    linear-gradient(rgb(0 0 0 / 70%), rgb(0 0 0 / 70%)), url('~/assets/imgs/main-background.webp');
+    linear-gradient(rgb(0 0 0 / 60%), rgb(0 0 0 / 60%)), url('~/assets/imgs/main-background.jpg');
   background-repeat: no-repeat;
   background-position:
     0 0,
@@ -50,11 +48,9 @@
   background-size: cover;
 
   @include respond-to('tablet') {
-    background-position: top;
-  }
-
-  @include respond-to('mobile') {
-    // background-position: center;
+    background-position:
+      0 0,
+      -160px 0;
   }
 
   &__wrapper {
@@ -72,6 +68,9 @@
     flex-direction: column;
     gap: 24px;
     text-align: center;
+    background: linear-gradient(105deg, #fff 0%, #d8d8d8 50%, #fff 100%);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
   }
 
   &__date {
@@ -95,6 +94,9 @@
     z-index: 1;
     margin-top: 54px;
     text-align: center;
+    background: linear-gradient(105deg, #fff 0%, #d8d8d8 50%, #fff 100%);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
   }
 
   &__map {
