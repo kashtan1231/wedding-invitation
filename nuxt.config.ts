@@ -48,6 +48,7 @@ export default defineNuxtConfig({
   css: ['modern-normalize'],
 
   modules: [
+    '@vueuse/motion/nuxt',
     [
       '@pinia/nuxt',
       {

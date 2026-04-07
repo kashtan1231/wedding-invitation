@@ -1,9 +1,19 @@
 <template>
   <div class="info" :class="{ 'info--light': !showInfoBg }">
     <div class="info__wrapper">
-      <h1 class="info__title">Timing</h1>
+      <h1
+        v-motion
+        :initial="{ opacity: 0, y: 30 }"
+        :visible="{ opacity: 1, y: 0, transition: { duration: 700 } }"
+        class="info__title"
+      >Timing</h1>
 
-      <div class="info__timing">
+      <div
+        v-motion
+        :initial="{ opacity: 0, y: 30 }"
+        :visible="{ opacity: 1, y: 0, transition: { duration: 700, delay: 200 } }"
+        class="info__timing"
+      >
         <h3>
           <b>13:00</b> <br />
           ЗБІР ГОСТЕЙ
@@ -15,14 +25,31 @@
         </h3>
       </div>
 
-      <h1 class="info__title">Details</h1>
+      <h1
+        v-motion
+        :initial="{ opacity: 0, y: 30 }"
+        :visible="{ opacity: 1, y: 0, transition: { duration: 700 } }"
+        class="info__title"
+      >Details</h1>
 
-      <h3 class="info__description">
+      <h3
+        v-motion
+        :initial="{ opacity: 0, y: 20 }"
+        :visible="{ opacity: 1, y: 0, transition: { duration: 700, delay: 150 } }"
+        class="info__description"
+      >
         Ми здогадуємося, що після отримання запрошення у вас можуть виникнути деякі запитання
       </h3>
 
       <div class="info__details">
-        <div v-for="(item, index) in detailsList" :key="item" class="item">
+        <div
+          v-for="(item, index) in detailsList"
+          :key="item"
+          v-motion
+          :initial="{ opacity: 0, y: 30 }"
+          :visible="{ opacity: 1, y: 0, transition: { duration: 600, delay: index * 150 } }"
+          class="item"
+        >
           <h1 class="item__number">0{{ index + 1 }}</h1>
           <h4 class="item__text" v-html="item"></h4>
         </div>
@@ -37,15 +64,41 @@
         dress code dress code dress code dress code dress code dress code
       </h2>
 
-      <h3 class="info__description">
+      <h3
+        v-motion
+        :initial="{ opacity: 0, y: 20 }"
+        :visible="{ opacity: 1, y: 0, transition: { duration: 700, delay: 150 } }"
+        class="info__description"
+      >
         Ми дуже хочемо, щоб атмосфера свята була цілісною, тому просимо вас дотриматися нашого
         дрес-коду в такій палітрі:
       </h3>
 
       <div class="info__dress-code">
-        <img class="info__dress-code-img" src="~/assets/imgs/palette.webp" alt="palette" />
-        <img class="info__dress-code-img" src="~/assets/imgs/men.webp" alt="men" />
-        <img class="info__dress-code-img" src="~/assets/imgs/hah-woman.webp" alt="hah women" />
+        <img
+          v-motion
+          :initial="{ opacity: 0, y: 30 }"
+          :visible="{ opacity: 1, y: 0, transition: { duration: 700 } }"
+          class="info__dress-code-img"
+          src="~/assets/imgs/palette.webp"
+          alt="palette"
+        />
+        <img
+          v-motion
+          :initial="{ opacity: 0, y: 30 }"
+          :visible="{ opacity: 1, y: 0, transition: { duration: 700, delay: 150 } }"
+          class="info__dress-code-img"
+          src="~/assets/imgs/men.webp"
+          alt="men"
+        />
+        <img
+          v-motion
+          :initial="{ opacity: 0, y: 30 }"
+          :visible="{ opacity: 1, y: 0, transition: { duration: 700, delay: 300 } }"
+          class="info__dress-code-img"
+          src="~/assets/imgs/hah-woman.webp"
+          alt="hah women"
+        />
       </div>
     </div>
   </div>

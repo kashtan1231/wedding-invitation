@@ -23,6 +23,7 @@
     "@popperjs/core": "^2.11.8",
     "@vee-validate/nuxt": "^4.15.1",
     "@vee-validate/yup": "^4.15.1",
+    "@vueuse/motion": "^3.0.3",
     "dayjs-nuxt": "^2.1.11",
     "modern-normalize": "^3.0.1",
     "nuxt": "^4.4.2",

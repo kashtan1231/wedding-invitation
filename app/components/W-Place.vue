@@ -1,7 +1,12 @@
 <template>
   <div class="place">
     <div class="place__wrapper">
-      <h3 class="place__text">
+      <h3
+        v-motion
+        :initial="{ opacity: 0, y: 30 }"
+        :visible="{ opacity: 1, y: 0, transition: { duration: 700 } }"
+        class="place__text"
+      >
         <span>Дорогі!</span>
         <span>
           Ви — частина нашої історії: наших щирих розмов до світанку, сміху, тепла й підтримки.
@@ -15,17 +20,35 @@
         </span>
       </h3>
 
-      <h1 class="place__date">
+      <h1
+        v-motion
+        :initial="{ opacity: 0, scale: 0.9 }"
+        :visible="{ opacity: 1, scale: 1, transition: { duration: 700 } }"
+        class="place__date"
+      >
         02.07.2026 <img src="~/assets/imgs/heart.png" class="place__date-heart" alt="heart" />
       </h1>
 
-      <h4 class="place__location" :class="{ 'place__location--colored': showInfoBg }">
+      <h4
+        v-motion
+        :initial="{ opacity: 0, y: 20 }"
+        :visible="{ opacity: 1, y: 0, transition: { duration: 700, delay: 150 } }"
+        class="place__location"
+        :class="{ 'place__location--colored': showInfoBg }"
+      >
         РЕСТОРАН HARVEST, <br />
         ОБУХІВСЬКЕ ШОСЕ, 50, КОЗИН, <br />
         КИЇВСЬКА ОБЛ.
       </h4>
 
-      <a class="place__map" href="https://maps.app.goo.gl/JfHoksq5C63vuGtH9" target="_blank">
+      <a
+        v-motion
+        :initial="{ opacity: 0, y: 20 }"
+        :visible="{ opacity: 1, y: 0, transition: { duration: 700, delay: 300 } }"
+        class="place__map"
+        href="https://maps.app.goo.gl/JfHoksq5C63vuGtH9"
+        target="_blank"
+      >
         <img src="~/assets/imgs/show-map.webp" alt="show map" />
       </a>
     </div>

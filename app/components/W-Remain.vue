@@ -1,14 +1,29 @@
 <template>
   <div class="remain" :class="{ 'remain--colored': !showRemainBg }">
     <div class="remain__wrapper">
-      <h1 class="remain__title">До нашого весілля:</h1>
-      <div class="remain__timer">
+      <h1
+        v-motion
+        :initial="{ opacity: 0, y: 30 }"
+        :visible="{ opacity: 1, y: 0, transition: { duration: 700 } }"
+        class="remain__title"
+      >До нашого весілля:</h1>
+      <div
+        v-motion
+        :initial="{ opacity: 0, y: 30 }"
+        :visible="{ opacity: 1, y: 0, transition: { duration: 700, delay: 200 } }"
+        class="remain__timer"
+      >
         <span>{{ days }} {{ pluralize(days, 'день', 'дні', 'днів') }}</span>
         <span>{{ hours }} {{ pluralize(hours, 'година', 'години', 'годин') }}</span>
         <span>{{ minutes }} {{ pluralize(minutes, 'хвилина', 'хвилини', 'хвилин') }}</span>
       </div>
 
-      <h3 class="remain__text">просимо підтвердити вашу присутність</h3>
+      <h3
+        v-motion
+        :initial="{ opacity: 0, y: 20 }"
+        :visible="{ opacity: 1, y: 0, transition: { duration: 700, delay: 400 } }"
+        class="remain__text"
+      >просимо підтвердити вашу присутність</h3>
     </div>
   </div>
 </template>

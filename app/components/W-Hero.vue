@@ -1,8 +1,18 @@
 <template>
   <div class="hero">
     <div class="hero__wrapper">
-      <h3 class="hero__title">Wedding day</h3>
-      <h1 class="hero__description">
+      <h3
+        v-motion
+        :initial="{ opacity: 0, y: 20 }"
+        :enter="{ opacity: 1, y: 0, transition: { duration: 800, delay: 400 } }"
+        class="hero__title"
+      >Wedding day</h3>
+      <h1
+        v-motion
+        :initial="{ opacity: 0, y: 30 }"
+        :enter="{ opacity: 1, y: 0, transition: { duration: 800, delay: 800 } }"
+        class="hero__description"
+      >
         <span>Konstantyn</span> <span>+</span> <span class="right">Yelyzaveta</span>
       </h1>
     </div>
