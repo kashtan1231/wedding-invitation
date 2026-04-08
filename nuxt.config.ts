@@ -31,7 +31,10 @@ export default defineNuxtConfig({
   },
 
   nitro: {
-    preset: 'bun',
+    preset: 'static',
+    prerender: {
+      routes: ['/'],
+    },
   },
 
   vite: {
