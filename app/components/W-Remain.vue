@@ -6,7 +6,8 @@
         :initial="{ opacity: 0, y: 30 }"
         :visible="{ opacity: 1, y: 0, transition: { duration: 700 } }"
         class="remain__title"
-      >До нашого весілля:</h1>
+        >До нашого весілля:</h1
+      >
       <div
         v-motion
         :initial="{ opacity: 0, y: 30 }"
@@ -23,7 +24,8 @@
         :initial="{ opacity: 0, y: 20 }"
         :visible="{ opacity: 1, y: 0, transition: { duration: 700, delay: 400 } }"
         class="remain__text"
-      >просимо підтвердити вашу присутність</h3>
+        >просимо підтвердити вашу присутність</h3
+      >
     </div>
   </div>
 </template>
